@@ -1,0 +1,27 @@
+ALGORITHM Challenge5_StudentsGradesDiff
+VAR
+    grad : INTEGER := 2 
+    student, diff : INTEGER := 1
+BEGIN
+    WHILE ( student <= 13 ) DO 
+        Write("Etudiant: ", student, " a eu ", grad);
+        grad := grad + diff;
+        diff := diff * 3;
+        student := student + 1;
+    END_WHILE
+END
+
+//Deuxieme solution avec boucle FOR
+ALGORITHM StudentsGradesDiff
+VAR
+    grad2 : INTEGER := 2 
+    diff2 : INTEGER := 1
+    student2 : INTEGER := 13
+    i : INTEGER
+BEGIN
+    FOR i FROM 1 TO student2 DO 
+        Write("Etudiant: ", i, " a eu ", grad);
+        grad := grad + diff;
+        diff := diff * 3;
+    END_FOR
+END

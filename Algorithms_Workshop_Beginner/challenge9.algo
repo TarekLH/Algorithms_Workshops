@@ -1,0 +1,28 @@
+ALGORITHM Challenge9_ColdWarmGame
+VAR
+    win : INTEGER := 45
+    max_value : INTEGER := 100
+    min_value : INTEGER := 0
+    Warm_zone, cpt : INTEGER := 5
+    x : INTEGER
+BEGIN
+    //Lanch repeated process and fail at 5 tries
+    WHILE (cpt > 0) DO
+        Write("Enter a value: ");
+        Read(x);
+        IF ( (x < min_value) AND (x > max_value) ) THEN
+            Write("Number out of range !");
+        ELSE_IF (x == win) THEN
+            Write("you got it, good job !");
+            cpt := -1;
+        ELSE_IF ( (x >= win - Warm_zone) AND (x <= win + Warm_zone) ) THEN
+            Write("Youre close !");
+        ELSE
+            Write("Still far try again..");
+        END_IF
+        cpt := cpt - 1;
+    END_WHILE
+    IF (x == 0) THEN
+        Write("Try harder next time!");
+    END_IF
+END

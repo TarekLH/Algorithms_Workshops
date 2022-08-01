@@ -1,0 +1,25 @@
+ALGORITHM Challenge13_AssignementsErrors2
+VAR
+    smallString: STRING[50] //pas besoin de ; dans la partie VAR
+    mediumString: STRING[100]
+    largeString: STRING[150]
+BEGIN
+    smallString := "I'm A Small String";
+    mediumString := "I'm A Medium String, you see";
+    largeString := "I'm a Large String and everybody knows that";
+
+    //smallString := largeString; il est inccorect d'affecter une variable STRING capable de contenir [150] caracteres, a une autre capable de contenir uniquement [50] caracteres.
+    mediumString := smallString; // c'est juste
+    largeString := smallString; // c'est juste
+    
+    FOR i FROM 1 TO smallString.length STEP 1  DO // c'est juste car la boucle respect la longeur disponible de la variable smallstring
+        smallString[i] := largeString[i];
+    END_FOR
+
+    //FOR i FROM 1 TO largeString.length STEP 1  DO; impossible car la boucle ne respecte pas la longeur de mediumstring.
+        mediumString[i] := largeString[i];
+    END_FOR
+
+END
+
+END

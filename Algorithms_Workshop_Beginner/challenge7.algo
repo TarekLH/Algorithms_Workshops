@@ -1,0 +1,18 @@
+ALGORITHM Challenge7_GreatestNumber
+VAR
+    x, y, z : INTEGER
+BEGIN
+    Write("Entrez votre premiere valeur: ");
+    Read(x);
+    Write("Entrez votre deuxieme valeur: ");
+    Read(y);
+    Write("Entrez votre troisieme valeur: ");
+    Read(z);
+    IF ( (x > y) AND (x > z) ) THEN 
+        Write("Votre premiere valeur est la plus grande: ", x);
+    ELSE_IF ( (y > x) AND (y > z) ) THEN
+        Write("Votre deuxieme valeur est la plus grande: ", y);
+    ELSE
+        Write("Votre troisieme valeur est la plus grande: ", z);
+    END_IF  
+END

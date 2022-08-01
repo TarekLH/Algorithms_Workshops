@@ -1,0 +1,13 @@
+ALGORITHM Challenge3_CercleCirconference
+CONST 
+    pi : FLOAT := 3.14
+    a : INTEGER := 2
+VAR
+    radius : FLOAT
+    result : FLOAT
+BEGIN
+    Write("Entrez la valeur de votre rayon: ",);
+    Read(radius);
+    result := a * pi * radius;
+    Write("La circonference de votre cercle est de: ", result);
+END

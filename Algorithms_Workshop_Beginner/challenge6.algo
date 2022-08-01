@@ -1,0 +1,20 @@
+ALGORITHM Challenge6_WaterBill
+VAR
+    conso, fixed_tax, debt, taxes, total, amount_water : FLOAT
+    unit_price : FLOAT :=   0.89
+BEGIN
+    //recolte d'infornations
+    Write("Entrez votre consomation d'eau: ");
+    Read(conso);
+    Write("Entrez le montant de votre taxe: ");
+    Read(fixed_tax);
+    Write("Entrez le montant de vos dettes ");
+    Read(debt);
+    //traitement
+    amount_water := conso * unit_price;
+    taxes := tax + debt;
+    total := amount_water + taxes;
+    //affichage
+    Write("Votre consomation s'eleve a: ", amount_water, ". Le totale de vos taxes est de: ", taxes, ".");
+    Write("Vous devez payer: ", total, ".")
+END

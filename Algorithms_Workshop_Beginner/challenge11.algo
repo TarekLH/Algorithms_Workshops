@@ -1,0 +1,16 @@
+ALGORITHM Challenge11_ValuesErrors
+VAR
+    number1, number2 : INTEGER
+    sum, i : INTEGER
+BEGIN
+    //number1 := number2; on ne peut pas affecter a number1 la valeur de number2 car ce dernier ne posséde aucune valeur
+    Write("Entrez une valeur: ");
+    Read(number2);
+    number1 := number2;
+
+    FOR i FROM 1 TO 5 STEP 1 DO
+        //sum := i; sum est une variable non declarée on ne peut donc pas lui affecter une valeur.
+        sum := i + 1;
+        Write(sum);
+    END_FOR
+END

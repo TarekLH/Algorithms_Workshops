@@ -1,0 +1,21 @@
+ALGORITHM Challenge12_AssignementsErrors
+VAR
+    number1 : INTEGER := 0 //pas besoin de ; dans la partie declaration des variables
+    number2 : FLOAT := 5.9
+    situation : CHAR := "M"
+    name : STRING := "Jhon"
+BEGIN
+    //number1 := number2; respect des types de variables; on ne peut pas affecter une variable FLOAT a une variable INTEGER
+    
+    number2 := number1; //c'est juste 
+    
+    // number1 := situation; respect des types de variables; on ne peut pas affecter une variable CHAR a une variable INTEGER
+    
+    // number2 := name; respect des types de variables; on ne peut pas affecter une variable STRING a une variable FLOAT
+    
+    name := situation //c'est juste
+    
+    //situation := name; respect des types de variables; on ne peut pas affecter une variable STRING a une variable CHAR
+    
+    situation := name[3]; //ceci revient a affecter le caratere "o" de la variable (name: STING) a la variable (situation: CHAR), c'est donc juste
+END

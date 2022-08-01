@@ -1,0 +1,8 @@
+ALGORITHM Challenge1_SquareCirconference    
+VAR
+    side : INTEGER := 5
+    result : INTEGER
+BEGIN
+    result := side * 4;
+    Write("La circonference du carre est de: ", result);
+END

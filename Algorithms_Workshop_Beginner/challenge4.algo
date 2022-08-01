@@ -1,0 +1,25 @@
+ALGORITHM Challenge4_StudentsGrades
+VAR
+    grad : INTEGER := 4
+    student : INTEGER := 1
+BEGIN
+    WHILE ( student <= 10 ) DO
+        Write("Etudiant numero: ", student, " sa note: ", grad);
+        grad := grad + 2;
+        student := student + 1;
+    END_WHILE
+    Write("Liste des eleves terminee");
+END
+
+//Deuxieme solution avec boucle FOR 
+ALGORITHM StudentsGrades
+VAR
+    grad2 : INTEGER := 4
+    students : INTEGER := 10
+    i : INTEGER
+BEGIN
+    FOR i FROM 1 TO students STEP 1 DO 
+        Write("Student number: ", i, " a eu: ", grad2);
+        grad = grad + 2;
+    END_FOR
+END

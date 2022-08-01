@@ -1,0 +1,17 @@
+ALGORITHM Challenge10_CommonErrors
+VAR
+    // number : INTEGER;
+    //name : STRING;
+    //FLOAT := FLOAT := 4.67;
+    //IF : 89; (IF est utilisée pour ajouter des conditions, elle ne peut etre declarée dans la partie des variables)
+    number : INTEGER
+    name : STRING[50]
+    number2 : FLOAT := 4.67
+BEGIN
+    //number : 8
+    number := 8;
+    name := "why didn't you close me!?";
+    FOR i FROM 1 TO 5 STEP 1 DO
+        number := number + 2;
+    END_FOR
+END

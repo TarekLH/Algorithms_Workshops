@@ -1,0 +1,34 @@
+ALGORITHM Challenge8_UserChoice
+VAR
+    x, y, choice : INTEGER  
+BEGIN
+    Write("Entrez vos entiers: ");
+    Read(x, y);
+    Write("Choisissez: ");
+    Write("- 1 pour la somme.");
+    Write("- 2 pour la difference.");
+    Write("- 3 pour la multiplication.");
+    Write("- 4 pour la division.");
+    choice := 0;
+    WHILE ((choice < 1) OR (choice > 4)) DO
+        Write("Entrez votre choix");
+        Read(choice);
+        SWITCH (choice) DO
+            CASE 1 : 
+                Write("La somme des deux valeurs est de: ", x + y);
+            CASE 2 :
+                IF (x > y) THEN
+                    Write("La difference entre les deux valeurs est de: ", x - y);
+                ELSE
+                    Write("La difference entre les deux valeurs est de: ", y - x);
+                END_IF
+            CASE 3 :
+                Write("La multiplication des deux valeurs vaut: ", x * y);
+            CASE 4 : 
+                IF (y > 0) THEN 
+                    Write("La division de votre premiere valeur par la deuxieme vaut: ", x / y);
+                ELSE
+                    Write("Votre deuxieme valeur doit etre plus grande de 0");
+                END_IF
+        END_SWITCH
+END

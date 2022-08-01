@@ -1,0 +1,11 @@
+ALGORITHM Challenge2_isoscele_Triangle_Circonference
+VAR
+    equal_side_length, base, result : FLOAT
+BEGIN
+    Write("Entrez la valeur de votre side length: ");
+    Read(equal_side_length);
+    Write("Entrez la valeur de votre base ");
+    Read(base);
+    result := side * 2 + base;
+    Write("La circonference de votre triangle isoscele est de : ", result)
+END
