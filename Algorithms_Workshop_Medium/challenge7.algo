@@ -1,0 +1,47 @@
+ALGORITHM Challenge7_SetAlgorithms
+VAR
+    tab1, tab2 : ARRAY_OF INTEGER[10]
+    tab3, tab4, tab5 : ARRAY_OF INTEGER[20]
+BEGIN
+    // Filling The Arrays With Values
+    Write("Remplissez tab1: ")
+    FOR i FROM 1 TO [10] STEP 1 DO
+        Write("Case num ", i, ": ");
+        Read(tab1[i]);
+    END_FOR
+    Write("Remplissez tab2: ")
+    FOR j FROM 1 TO [10] STEP 1 DO
+        Write("Case num ", j, ": ");
+        Read(tab2[j]);
+    END_FOR
+
+
+    // Traitement
+    // Intersection; afficher (dans tab3) les elements qui sont dans tab1 ET tab2.
+
+    FOR i FROM 1 TO tab1.length STEP 1 DO // lire les valeurs de tab1
+        FOR j FROM 1 TO tab2.length STEP 1 DO //lire les valerus de tab2
+            IF (tab[i] = tab[j]) THEN // si valeur de tab1 = valeur de tab2
+                FOR k FROM 1 TO [20] STEP 1 DO // remplire tab3
+                    tab3[k] := tab[i] 
+                END_FOR
+            END_IF
+        END_FOR
+    END_FOR
+
+
+    // Afficher tab3 
+    Write("les valeurs se trouvant dans le premier et deuxieme tab sont: ", tab[k])
+
+
+    //Difference; afficher (dans tab4) les elements qui sont dans tab1 et qui ne sont pas tab2
+    FOR i FROM 1 TO tab1.length STEP 1 DO // lire les valeurs de tab1
+        FOR j FROM 1 TO tab2.length STEP 1 DO //lire les valerus de tab2
+            IF (tab[i] <> tab[j]) THEN 
+                FOR l FROM 1 TO [20] STEP 1 DO // remplire tab3
+                    tab4[l] := tab[i] 
+                END_FOR
+            END_IF
+        END_FOR
+    END_FOR
+END

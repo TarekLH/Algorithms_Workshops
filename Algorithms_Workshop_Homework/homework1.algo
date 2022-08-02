@@ -1,0 +1,44 @@
+ALGORITHM Homework1_PrintSumOfArrayElements
+VAR
+    arr : ARRAY_OF FLOAT[50]
+    len, rep : INTEGER
+    sum : FLOAT 
+BEGIN
+    //Determiner longeur de tab
+    Write("Anoncez le nombre de cases dont vous avez besoin: ");
+    Read(len);
+    WHILE(len > 50) DO
+        Write("Nombre de cases maximum est de 50.");
+        Write("Entrez nombre de cases valide: ");
+        Read(len);
+    END_WHILE
+    
+    //Rempllire tab
+    Write("Entrez vos valeurs: ")
+    FOR i FROM 1 TO len STEP 1 DO 
+        Write("Valeur case num ", i, ": ");
+        Read(arr[i]);
+    END_FOR
+
+    //Traitement
+    sum := 0;
+    FOR i FROM 1 TO len STEP 1 DO 
+        sum := sum + arr[i];
+    END_FOR
+
+    //Afficher tableau
+    FOR i FROM 1 TO len STEP 1 DO 
+        Write("Valeurs tableau: ", arr[i]);
+    END_FOR
+    
+    //Afficher somme ?
+    Write("Voulez vous voir la somme des valeurs de votre tableau?");
+    Write("1 : pour afficher");
+    Write("0 : pour ignorer")
+    Read(rep);
+    IF (rep = 1) THEN
+        Write("La somme des valeurs du tableau est de: ", sum);
+    ELSE
+        Write("Merci a la prochaine.")
+    END_IF
+END

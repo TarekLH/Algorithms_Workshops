@@ -1,0 +1,30 @@
+ALGORITHM Challenge5_CalculatesTheNumberOfEvenValues.
+VAR
+    arr : ARRAY_OF INTEGER[50];
+    len, i : INTEGER;
+    pair : BOOLEAN
+BEGIN
+    // Reading The Arrays Value
+    Write("Give me the array length");
+    Read(len);
+    WHILE (len > 50) DO
+        Write("Give me a Correct Array length !");
+        Read(len);
+    END_WHILE
+
+    FOR i FROM 1 TO len STEP 1 DO
+        Read(arr[i]);
+    END_FOR
+
+
+    // Traitement
+    pair := TRUE
+    FOR i FROM 1 TO arr.length STEP 1 DO
+        IF ((arr[i] / 2) = FLOAT) THEN
+            pair := FALSE;
+            Write("Le contenu de la case", i, " est impair, et est egale a: ", arr[i]);
+        ELSE
+            Write("Le contenu de la case", i, " est pair, et est egale a: ", arr[i]);
+        END_IF
+    END_FOR
+END

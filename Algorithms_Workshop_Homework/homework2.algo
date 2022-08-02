@@ -1,0 +1,19 @@
+ALGORITHM Homework2_WriteBackToUserOccurrenceOfGivenCharacter.
+
+VAR
+    tab : STRING[200] := "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+BEGIN
+
+    //Traitement
+    Write("Entrez la lettre dont vous voulez l'occurence");
+    Read(tab[i]);
+    IF (tab[i] = " ") THEN
+        Write("Entrez une valeur valide");
+    ELSE
+        
+
+    //Afficher tableau
+    FOR i FROM 1 TO len STEP 1 DO 
+        Write("Valeurs tableau: ", arr[i]);
+    END_FOR
+END
