@@ -2,14 +2,22 @@ ALGORITHM Homework2_WriteBackToUserOccurrenceOfGivenCharacter.
 
 VAR
     tab : STRING[200] := "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+    x : CHAR
+    repeated : INTEGER
 BEGIN
 
     //Traitement
     Write("Entrez la lettre dont vous voulez l'occurence");
-    Read(tab[i]);
-    IF (tab[i] = " ") THEN
-        Write("Entrez une valeur valide");
-    ELSE
+    Read(x);
+    i = 1;
+    repeated := 0;
+    WHILE (i < tab.length) DO
+        IF (tab[i] = x) THEN
+            repeated := repeated + 1;
+        END_IF
+        i := i + 1;
+    END_WHILE
+    Write("nmbr de repetitons de votre lettre est de: ", repeated);
         
 
     //Afficher tableau

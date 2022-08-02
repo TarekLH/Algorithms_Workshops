@@ -2,6 +2,63 @@ ALGORITHM Challenge7_SetAlgorithms
 VAR
     tab1, tab2 : ARRAY_OF INTEGER[10]
     tab3, tab4, tab5 : ARRAY_OF INTEGER[20]
+    choice : INTEGER
+
+    //procedure pour intersection
+    PROCEDURE intersection(tab3[k])
+    VAR
+        tab3 : ARRAY_OF INTEGER[20]
+    BEGIN
+        FOR i FROM 1 TO tab1.length STEP 1 DO // lire les valeurs de tab1
+        FOR j FROM 1 TO tab2.length STEP 1 DO //lire les valerus de tab2
+            IF (tab1[i] = tab2[j]) THEN // si valeur de tab1 = valeur de tab2
+                FOR k FROM 1 TO [20] STEP 1 DO // remplir tab3 avec les valeurs, tab3 max.length = [20] au cas ou toutes les valeurs serait les memes
+                    tab3[k] := tab1[i] // avec tab1[i] = tab2[j] 
+                END_FOR
+            END_IF
+        END_FOR
+    END_FOR
+    END
+
+    //procedure pour difference
+    PROCEDURE difference(tab4[l])
+    VAR
+        tab4 : ARRAY_OF INTEGER[20]
+    BEGIN
+        FOR i FROM 1 TO tab1.length STEP 1 DO // lire les valeurs de tab1
+            FOR j FROM 1 TO tab2.length STEP 1 DO //lire les valerus de tab2
+                IF (tab1[i] <> tab2[j]) THEN //
+                    FOR l FROM 1 TO [20] STEP 1 DO // remplire tab4
+                        tab4[l] := tab2[i]; // on donne les valeur qui ne sont pas dans tab2[j] a tab4[l] 
+                    END_FOR
+                END_IF
+            END_FOR
+        END_FOR
+    END
+
+    //procedure pour union
+    PROCEDURE union(tab5[m])
+    VAR
+        tab5 : ARRAY_OF INTEGER[20]
+    BEGIN
+            IF (choice = 1) THEN
+                FOR i FROM 1 TO tab1.length STEP 1 DO
+                    FOR m FROM 1 TO [20] STEP 1 DO
+                        tab5[m] := tab1[i];
+                    END_FOR
+                END_FOR
+                Write("valeur de tab5: ", tab5[m])
+            ELSE_IF (choice = 2) THEN
+                FOR j FROM 1 TO tab2.length STEP 1 DO
+                    FOR m FROM 1 TO [20] STEP 1 DO 
+                        tab5[m] := tab2[j];
+                    END_FOR
+                END_FOR
+                Write("valeur de tab5: ", tab5[m])
+            ELSE
+                Write("Entrez une valeur valide")
+            END_FOR
+    END
 BEGIN
     // Filling The Arrays With Values
     Write("Remplissez tab1: ")
@@ -17,31 +74,70 @@ BEGIN
 
 
     // Traitement
-    // Intersection; afficher (dans tab3) les elements qui sont dans tab1 ET tab2.
+    // Intersection; afficher (dans tab3) les elements qui sont dans tab1 (ET) tab2.
 
     FOR i FROM 1 TO tab1.length STEP 1 DO // lire les valeurs de tab1
         FOR j FROM 1 TO tab2.length STEP 1 DO //lire les valerus de tab2
-            IF (tab[i] = tab[j]) THEN // si valeur de tab1 = valeur de tab2
-                FOR k FROM 1 TO [20] STEP 1 DO // remplire tab3
-                    tab3[k] := tab[i] 
+            IF (tab1[i] = tab2[j]) THEN // si valeur de tab1 = valeur de tab2
+                FOR k FROM 1 TO [20] STEP 1 DO // remplir tab3 avec les valeurs, tab3 max.length = [20] au cas ou toutes les valeurs serait les memes
+                    tab3[k] := tab1[i] // avec tab1[i] = tab2[j] 
                 END_FOR
             END_IF
         END_FOR
     END_FOR
 
+    //quand on utilise la procedure
+    intersection(tab3[k]);
 
     // Afficher tab3 
-    Write("les valeurs se trouvant dans le premier et deuxieme tab sont: ", tab[k])
+    Write("les valeurs se trouvant dans le premier et deuxieme tab sont: ", tab3[k]);
 
 
-    //Difference; afficher (dans tab4) les elements qui sont dans tab1 et qui ne sont pas tab2
+    //Difference; afficher (dans tab4) les elements qui sont dans tab1 et qui ne sont pas dans tab2
     FOR i FROM 1 TO tab1.length STEP 1 DO // lire les valeurs de tab1
         FOR j FROM 1 TO tab2.length STEP 1 DO //lire les valerus de tab2
-            IF (tab[i] <> tab[j]) THEN 
-                FOR l FROM 1 TO [20] STEP 1 DO // remplire tab3
-                    tab4[l] := tab[i] 
+            IF (tab1[i] <> tab2[j]) THEN //
+                FOR l FROM 1 TO [20] STEP 1 DO // remplire tab4
+                    tab4[l] := tab2[i]; // on donne les valeur qui ne sont pas dans tab2[j] a tab4[l] 
                 END_FOR
             END_IF
         END_FOR
     END_FOR
+
+    //quand on utilise la procedure
+    difference(tab4[l])
+
+    // Afficher tab4
+    Write("les valeurs se trouvant dans le premier et deuxieme tab sont: ", tab4[l]);
+
+
+    //Union; afficher (dans tab5) les elements qui sont dans tab1 OU tab2
+    Write("quelle tab voulez vous affecter a tab5 ?");
+    Write("tapez 1 - pour affecter les valeur de tab1");
+    Write("tapez 2 - pour affectr les valeur de tab2");
+    Read(choice);
+
+    //quand on utilise la procedure
+    union(tab5[m])
+
+    IF (choice = 1) THEN
+        FOR i FROM 1 TO tab1.length STEP 1 DO
+            FOR m FROM 1 TO [20] STEP 1 DO
+                tab5[m] := tab1[i];
+            END_FOR
+        END_FOR
+        Write("valeur de tab5: ", tab5[m])
+    ELSE_IF (choice = 2) THEN
+        FOR j FROM 1 TO tab2.length STEP 1 DO
+            FOR m FROM 1 TO [20] STEP 1 DO 
+                tab5[m] := tab2[j];
+            END_FOR
+        END_FOR
+        Write("valeur de tab5: ", tab5[m])
+    ELSE
+        Write("Entrez une valeur valide")
+    END_FOR
+
+
+
 END

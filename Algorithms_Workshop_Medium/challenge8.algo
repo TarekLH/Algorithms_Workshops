@@ -1,0 +1,25 @@
+ALGORITHM Challenge8_DifferenceBetweenEachValueOfArray
+VAR
+    arr1, arr2 : ARRAY_OF INTEGER[15]
+
+BEGIN
+    //Remplire tableaux
+    Write("Entrez valeurs arr1: ");
+    FOR i FROM 1 TO 15 STEP 1 DO 
+        Read(arr1[i]);
+    END_FOR
+    Write("Entrez valeurs arr2: ");
+    FOR j FROM 1 TO 15 STEP 1 DO 
+        Read(arr2[j]);
+    END_FOR
+
+    //Traitements
+    i :=1;
+    REPEAT
+        x := tab1[i];
+        
+    UNTIL ( i > arr1.length )
+
+
+
+END
