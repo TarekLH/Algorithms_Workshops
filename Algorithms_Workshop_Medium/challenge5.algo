@@ -1,6 +1,6 @@
 ALGORITHM Challenge5_CalculatesTheNumberOfEvenValues.
 VAR
-    arr : ARRAY_OF INTEGER[20]
+    arr : ARRAY_OF FLOAT[20]
     len, i : INTEGER
 BEGIN
     // Reading The Arrays Value
