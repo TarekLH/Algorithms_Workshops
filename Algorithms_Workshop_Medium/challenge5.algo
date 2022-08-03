@@ -18,10 +18,10 @@ BEGIN
 
     // Traitement
     FOR i FROM 1 TO arr.length STEP 1 DO
-        IF ((arr[i] / 2) = FLOAT) THEN
-            Write("Le contenu de la case", i, " est impair, et est egale a: ", arr[i]);
-        ELSE
+        IF ((arr[i] / 2) = INTEGER) THEN
             Write("Le contenu de la case", i, " est pair, et est egale a: ", arr[i]);
+        ELSE
+            Write("Le contenu de la case", i, " est impair, et est egale a: ", arr[i]);
         END_IF
     END_FOR
 END
