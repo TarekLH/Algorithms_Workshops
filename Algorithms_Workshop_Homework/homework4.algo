@@ -1,0 +1,62 @@
+ALGORITHM Homework4_CheckIfNumberIsMultipleOf3
+VAR
+    tab: ARRAY_OF INTEGER[10]
+    choice, x, y, z, k: INTEGER
+BEGIN
+    //table de multiplication de 3
+    FOR i FROM 1 TO 10 STEP 1 DO
+        j := 3
+        tab[i] := i * j; 
+    END_FOR
+
+    //Utilisateur choisit 
+    Write("choisissez selon votre nombre: ");
+    Write(" taper 1 pour une unite");
+    Write(" taper 2 si votre nombre est >= 10 ");
+    Write(" taper 3 si votre nombre est >= 100");
+    Write(" taper 4 si votre nombre est >= 1000");
+    Read(choice);
+    IF ( choice >= 1 AND choice <= 4);
+        SWITCH (choice) DO
+            case 1 : 
+                Write("Entrer votre unite: ");
+                Read(x);
+                IF ( (x = tab[i]) THEN
+                    Write("Votre nbr est multiple de 3");
+                ELSE
+                    Write("Votre nbr n'est pas multiple de 3");
+                END_IF
+            BREAK    
+            case 2 :
+                Write("Entrer chaque digits de votre nombre: ");
+                Read(x, y);
+                IF ( (x + y) = tab[i]) THEN
+                    Write("Votre est multiple de 3");
+                ELSE
+                    Write("Votre nbr n'est pas multiple de 3");
+                END_IF
+            BREAK
+            case 3 : 
+                Write("Entrer chaque digits de votre nombre: ");
+                Read(x, y, z);
+                IF ( (x + y + z) = tab[i]) THEN
+                    Write("Votre est multiple de 3");
+                ELSE
+                    Write("Votre nbr n'est pas multiple de 3");
+                END_IF
+            BREAK
+            case 4 :
+                Write("Entrer chaque digits de votre nombre: ");
+                Read(x, y, z, k);
+                IF ( (x + y + z + k) = tab[i]) THEN
+                    Write("Votre est multiple de 3");
+                ELSE
+                    Write("Votre nbr n'est pas multiple de 3");
+                END_IF
+            BREAK
+            default : set_instructions
+        END_SWITCH
+    ELSE
+        Write("Entrez svp une valeur allant de 1 a 4")
+    END_IF
+END

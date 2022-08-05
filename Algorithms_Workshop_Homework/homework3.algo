@@ -1,0 +1,21 @@
+ALGORITHM Homework3_AlgorithmSolveSecondDegreeEquations
+VAR
+    a, b, c, Delta: INTEGER
+BEGIN
+    Write("Entrez les valeurs de a, b et c respectivement : ");
+    Read(a, b, c);
+    IF (a = 0) THEN 
+        Write("La solution de votre equation est: ", -c / b); //x = -c/b
+    ELSE_IF (a = 0 AND b = 0) THEN   
+        Write("Aucune solution");
+    ELSE 
+        Delta := (b^2) - (4 * a * c) 
+        IF (Delta > 0) THEN 
+            Write("Solution x1: ", (-b - ( Delta^(0.5) )) / (2 * a), "Ssolution x2: ", (-b + ( Delta^(0.5) )) / (2 * a));
+        ELSE_IF (Delta = 0) THEN
+            Write("Solution x0: ", -b / (2*a));
+        ELSE
+            Write("Pas de solutions possible")
+        END_IF
+    END_IF
+END
